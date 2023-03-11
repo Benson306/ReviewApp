@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import Home from './screens/home';
+import Home from './screens/Home';
 import * as Font from 'expo-font'
 import { useState } from 'react';
 import AppLoading from 'expo-app-loading'
-import Navigator from './routes/homeStack'
+import Navigator from './routes/Drawer'
+import { NavigationContainer } from '@react-navigation/native';
 
 const getFonts = () =>{
   return Font.loadAsync({
@@ -18,7 +19,10 @@ export default function App() {
 
   if(fontsLoaded){
     return (
-      Navigator()
+      <NavigationContainer>
+            <Navigator />
+      </NavigationContainer>
+      
     );
   }else{
     return (

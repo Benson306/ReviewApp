@@ -1,22 +1,26 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
-import Home from '../screens/home';
-import ReviewDetails from '../screens/reviewDetails';
+import Home from '../screens/Home';
+import ReviewDetails from '../screens/ReviewDetails';
 
 
 const Stack = createStackNavigator();
 
-export default function Navigator(){
+export default function HomeStack(){
     return(
-        <NavigationContainer>
-            <Stack.Navigator initialRouteNames='Home'>
+            <Stack.Navigator 
+                //  
+                initialRouteName='Home Screen'>
                 <Stack.Screen 
                     name='Home' 
-                    component={Home} 
+                    component={Home}
                     options= {{
-                        title:'Home Screen',
+                        title:'Home',
                         headerStyle:{backgroundColor:'#eee'},
-                        headerTintColor:'#444'
+                        headerTitleAlign:'center',
+                        headerTintColor:'#444',
+                        headerShown: false
+                        
                     }}
                 />
                 <Stack.Screen 
@@ -29,6 +33,5 @@ export default function Navigator(){
                     }}
                 />
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }

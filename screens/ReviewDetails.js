@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet,Text, View, Image } from "react-native";
+import { Button, StyleSheet,Text, View, Image, ImageBackground } from "react-native";
 import Card from "../shared/Card";
 import { globalStyles,images } from "../styles/global";
 
@@ -11,7 +11,7 @@ export default function ReviewDetails({route, navigation}){
 
     const { title, rating, body} = route.params;
     return ( 
-        <View style={globalStyles.container}>
+        <ImageBackground source={require('../assets/game_bg.png')} style={globalStyles.container}>
             <Card>
                 <Text>{title}</Text>
                 <Text>{body}</Text>
@@ -21,7 +21,7 @@ export default function ReviewDetails({route, navigation}){
                 </View>
                 {/* <Button title="Go to Home" onPress={handleBack} /> */}
             </Card>
-        </View>
+        </ImageBackground>
         
      );
 }

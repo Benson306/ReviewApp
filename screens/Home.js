@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, FlatList, StyleSheet,Text, TouchableOpacity, View } from "react-native";
 import * as Font from 'expo-font'
 import { globalStyles } from "../styles/global";
+import Card from "../shared/Card";
 export default function Home({ navigation }){
     
     // const pressHandler = ()=>{
@@ -22,7 +23,9 @@ export default function Home({ navigation }){
                 data={reviews}
                 renderItem={({ item }) =>(
                     <TouchableOpacity onPress={()=> navigation.navigate('Review', item)}>
-                        <Text style={globalStyles.titleText}>{item.title}</Text>
+                        <Card>
+                            <Text style={globalStyles.titleText}>{item.title}</Text>
+                        </Card>
                     </TouchableOpacity>
                 )}
             />
